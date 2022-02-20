@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appbar_height">80dp</dimen>
+    <dimen name="appbar_title_text_size">20sp</dimen>
+    <dimen name="appbar_title_margin_start">24dp</dimen>
+    <dimen name="appbar_padding_vertical">16dp</dimen>
+    <dimen name="main_recyclerview_padding_horizontal">16dp</dimen>
+
+    <!-- Main Fragment Event Item -->
+    <dimen name="item_event_radius">8dp</dimen>
+    <dimen name="item_event_height">210dp</dimen>
+    <dimen name="item_event_padding">24dp</dimen>
+    <dimen name="item_event_time_margin_top">12dp</dimen>
+    <dimen name="item_event_default_text_size">14sp</dimen>
+    <dimen name="item_event_title_text_size">24sp</dimen>
+    <dimen name="item_event_title_margin_top">8dp</dimen>
+    <dimen name="item_event_location_margin_top">16dp</dimen>
+    <dimen name="item_event_description_margin_top">8dp</dimen>
+    <dimen name="item_event_decoration_size">16dp</dimen>
+    <dimen name="item_event_first_item_margin_top">17dp</dimen>
+    <dimen name="item_event_last_item_margin_top">8dp</dimen>
+
+    <!-- Detail Fragment -->
+    <dimen name="detail_appbar_height">40dp</dimen>
+    <dimen name="detail_appbar_padding_top">16dp</dimen>
+    <dimen name="detail_image_size">296dp</dimen>
+    <dimen name="detail_content_padding_start">24dp</dimen>
+    <dimen name="detail_content_padding_top">24dp</dimen>
+    <dimen name="detail_content_padding_end">9dp</dimen>
+    <dimen name="detail_content_padding_bottom">16dp</dimen>
+    <dimen name="detail_content_time_text_size">15sp</dimen>
+    <dimen name="detail_content_time_line_height">20sp</dimen>
+    <dimen name="detail_content_title_text_size">28sp</dimen>
+    <dimen name="detail_content_title_line_height">34sp</dimen>
+    <dimen name="detail_content_location_line_height">17sp</dimen>
+    <dimen name="detail_content_description_text_size">17sp</dimen>
+    <dimen name="detail_content_description_line_height">22sp</dimen>
+    <dimen name="detail_content_textview_margin_top">16dp</dimen>
+    <dimen name="detail_content_description_margin_top">8dp</dimen>
+    <dimen name="detail_button_size">24dp</dimen>
+    <dimen name="detail_back_button_margin_start">24dp</dimen>
+    <dimen name="detail_share_button_margin_end">16dp</dimen>
+</resources>

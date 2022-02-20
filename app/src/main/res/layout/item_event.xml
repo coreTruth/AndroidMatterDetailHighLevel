@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/decoration_first_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_event_first_item_margin_top"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/decoration"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_event_decoration_size"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decoration_first_item" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_event_height"
+        android:background="@drawable/placeholder_nomoon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decoration">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/event_image_content_description"
+            android:scaleType="fitXY" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_event_height"
+            android:padding="@dimen/item_event_padding">
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/Phun.App.TextView.Default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_event_time_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Event Time" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/Phun.App.TextView.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_event_time_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"
+                tools:text="Event Time" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/Phun.App.TextView.Default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_event_location_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="Location" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/Phun.App.TextView.Default"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/item_event_description_margin_top"
+                android:ellipsize="end"
+                android:maxLines="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location"
+                tools:text="Description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/decoration_last_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_event_last_item_margin_top"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
