@@ -46,10 +46,10 @@ class DetailFragment : Fragment() {
                 val intent = Intent(Intent.ACTION_SEND).apply {
                     putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_event_subject))
                     putExtra(Intent.EXTRA_TEXT, args.event.getMessageBody(requireContext()))
-                    putExtra(Intent.EXTRA_STREAM, Uri.parse(args.event.image))
-                    type = "image/*";
+                    args.event.image?.let { putExtra(Intent.EXTRA_STREAM, Uri.parse(it)) }
+                    type = "image/*"
                 }
-                startActivity(Intent.createChooser(intent, getString(R.string.share_event_with)));
+                startActivity(Intent.createChooser(intent, getString(R.string.share_event_with)))
             }
         }
     }
