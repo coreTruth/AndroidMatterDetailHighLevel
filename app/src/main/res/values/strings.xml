@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Phun App</string>
+    <string name="app_name">Turo App</string>
     <string name="fail_fetch">Failed to fetch data</string>
-    <string name="event_image_content_description">Event Image</string>
-    <string name="share_event_with">Share Event with</string>
-    <string name="share_event_subject">Sharing a event with you</string>
+    <string name="business_image_content_description">Business Image</string>
     <string name="title">Title : </string>
     <string name="description">Description : </string>
+    <string name="pizza">Pizza</string>
+    <string name="beer">Beer</string>
 </resources>

@@ -24,7 +24,7 @@
         android:label="detail_fragment"
         tools:layout="@layout/detail_fragment">
         <argument
-            android:name="event"
-            app:argType="com.example.myapplication.data.Event" />
+            android:name="business"
+            app:argType="com.example.myapplication.data.entity.BusinessItem" />
     </fragment>
 </navigation>

@@ -31,6 +31,23 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.google.android.material.button.MaterialButton
+        style="@style/ThemeOverlay.Material3.Button.TextButton"
+        android:id="@+id/bt_pizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pizza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_layout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_beer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/beer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_pizza" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_events"
         android:layout_width="match_parent"
@@ -41,8 +58,8 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
-        tools:listitem="@layout/item_event" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_pizza"
+        tools:listitem="@layout/item_business" />
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress_bar"

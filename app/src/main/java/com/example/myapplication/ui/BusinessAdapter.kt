@@ -8,17 +8,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.data.Event
-import com.example.myapplication.databinding.ItemEventBinding
+import com.example.myapplication.data.entity.BusinessItem
+import com.example.myapplication.databinding.ItemBusinessBinding
 import com.example.myapplication.util.load
 
-class EventAdapter(private val clickListener: (event: Event) -> Unit) :
-    ListAdapter<Event, EventAdapter.ItemViewHolder>(DiffCallback()) {
+class BusinessAdapter(private val clickListener: (business: BusinessItem) -> Unit) :
+    ListAdapter<BusinessItem, BusinessAdapter.ItemViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_event, parent, false)
+                .inflate(R.layout.item_business, parent, false)
         )
     }
 
@@ -27,18 +27,20 @@ class EventAdapter(private val clickListener: (event: Event) -> Unit) :
     }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = ItemEventBinding.bind(itemView)
+        private val binding = ItemBusinessBinding.bind(itemView)
         fun bind(
             position: Int,
             itemCount: Int,
-            item: Event,
-            clickListener: (event: Event) -> Unit
+            item: BusinessItem,
+            clickListener: (business: BusinessItem) -> Unit
         ) = with(binding) {
-            tvTitle.text = item.title
-            tvDescription.text = item.description
-            tvTime.text = item.getTimeStringByLocalTimeZone()
-            tvLocation.text = item.getFullLocation()
-            ivBackground.load(item.image)
+            tvTitle.text = item.name
+            tvDescription.text = item.alias
+            tvPrice.text = item.price
+            tvLocation.text = item.getLocation()
+            ivBackground.load(item.imageUrl)
+            tvRate.text = item.rating.toString()
+            tvReviewCount.text = item.reviewCount.toString()
             decorationFirstItem.isVisible = position == 0
             decoration.isVisible = position > 0
             decorationLastItem.isVisible = position == itemCount - 1
@@ -47,7 +49,7 @@ class EventAdapter(private val clickListener: (event: Event) -> Unit) :
     }
 }
 
-class DiffCallback : DiffUtil.ItemCallback<Event>() {
-    override fun areItemsTheSame(oldItem: Event, newItem: Event): Boolean = oldItem.id == newItem.id
-    override fun areContentsTheSame(oldItem: Event, newItem: Event): Boolean = oldItem == newItem
+class DiffCallback : DiffUtil.ItemCallback<BusinessItem>() {
+    override fun areItemsTheSame(oldItem: BusinessItem, newItem: BusinessItem): Boolean = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: BusinessItem, newItem: BusinessItem): Boolean = oldItem == newItem
 }

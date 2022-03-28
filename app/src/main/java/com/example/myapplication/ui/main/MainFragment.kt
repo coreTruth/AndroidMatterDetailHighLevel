@@ -10,9 +10,10 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.data.Event
+import com.example.myapplication.data.entity.BusinessItem
+import com.example.myapplication.data.entity.BusinessResponse
 import com.example.myapplication.databinding.MainFragmentBinding
-import com.example.myapplication.ui.EventAdapter
+import com.example.myapplication.ui.BusinessAdapter
 import com.example.myapplication.util.disableUI
 import com.example.myapplication.util.setMarginTop
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment() {
     private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
-    private lateinit var eventAdapter: EventAdapter
+    private lateinit var businessAdapter: BusinessAdapter
 
     private val viewModel: MainViewModel by viewModels()
 
@@ -45,18 +46,26 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() = with(binding) {
-        eventAdapter = EventAdapter(::onMainBreedClick)
-        rvEvents.adapter = eventAdapter
+        businessAdapter = BusinessAdapter(::onMainBreedClick)
+        rvEvents.adapter = businessAdapter
+        btPizza.setOnClickListener {
+            viewModel.getBusiness("pizza", "111 Sutter st, San Francisco")
+        }
+
+        btBeer.setOnClickListener {
+            viewModel.getBusiness("beer", "111 Sutter st, San Francisco")
+        }
     }
 
     private fun initViewModel() = with(viewModel) {
         loading.observe(viewLifecycleOwner, ::showProgressBar)
-        events.observe(viewLifecycleOwner, eventAdapter::submitList)
+        business.observe(viewLifecycleOwner, businessAdapter::submitList)
+        getBusiness("pizza", "111 Sutter st, San Francisco")
     }
 
-    private fun onMainBreedClick(event: Event) =
+    private fun onMainBreedClick(business: BusinessItem) =
         findNavController().navigate(
-            MainFragmentDirections.actionMainFragmentToDetailFragment(event)
+            MainFragmentDirections.actionMainFragmentToDetailFragment(business)
         )
 
     private fun showProgressBar(show: Boolean) {
