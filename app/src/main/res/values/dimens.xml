@@ -6,19 +6,20 @@
     <dimen name="appbar_padding_vertical">16dp</dimen>
     <dimen name="main_recyclerview_padding_horizontal">16dp</dimen>
 
-    <!-- Main Fragment Event Item -->
-    <dimen name="item_event_radius">8dp</dimen>
-    <dimen name="item_event_height">210dp</dimen>
-    <dimen name="item_event_padding">24dp</dimen>
-    <dimen name="item_event_time_margin_top">12dp</dimen>
-    <dimen name="item_event_default_text_size">14sp</dimen>
-    <dimen name="item_event_title_text_size">24sp</dimen>
-    <dimen name="item_event_title_margin_top">8dp</dimen>
-    <dimen name="item_event_location_margin_top">16dp</dimen>
-    <dimen name="item_event_description_margin_top">8dp</dimen>
-    <dimen name="item_event_decoration_size">16dp</dimen>
-    <dimen name="item_event_first_item_margin_top">17dp</dimen>
-    <dimen name="item_event_last_item_margin_top">8dp</dimen>
+    <!-- Main Fragment business Item -->
+    <dimen name="item_business_radius">8dp</dimen>
+    <dimen name="item_business_height">210dp</dimen>
+    <dimen name="item_business_padding">24dp</dimen>
+    <dimen name="item_business_time_margin_top">12dp</dimen>
+    <dimen name="item_business_default_text_size">14sp</dimen>
+    <dimen name="item_business_title_text_size">24sp</dimen>
+    <dimen name="item_business_title_margin_top">8dp</dimen>
+    <dimen name="item_business_location_margin_top">16dp</dimen>
+    <dimen name="item_business_description_margin_top">8dp</dimen>
+    <dimen name="item_business_decoration_size">16dp</dimen>
+    <dimen name="item_business_first_item_margin_top">17dp</dimen>
+    <dimen name="item_business_last_item_margin_top">8dp</dimen>
+    <dimen name="search_button_margin">20dp</dimen>
 
     <!-- Detail Fragment -->
     <dimen name="detail_appbar_height">40dp</dimen>

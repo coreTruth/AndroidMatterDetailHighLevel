@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid android:color="@color/cardview_dark_background"/>
-    <corners android:radius="@dimen/item_event_radius"/>
+    <corners android:radius="@dimen/item_business_radius"/>
 </shape>
